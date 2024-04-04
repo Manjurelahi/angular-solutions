@@ -1,0 +1,39 @@
+<h1>{{title}}</h1>
+<form #panForm="ngForm">
+    <div [hidden]="panForm.submitted">
+        <div class="form-group">
+            <input
+                type="text"
+                id="pan"
+                name="pan"
+                class="form-control"
+                required
+                minlength="10"
+                maxlength="10"
+                [(ngModel)]="user.pan"
+                #pan="ngModel"
+                panRegex
+            />
+            <div
+            *ngIf="pan.invalid && (pan.dirty || pan.touched)"
+            class="alert"
+          >
+            <div *ngIf="pan.errors?.['required']">PAN is required</div>
+            <div *ngIf="pan.errors?.['minlength']">PAN length must be 10</div>
+            <div *ngIf="pan.errors?.['regExpError'] && pan.value.length==10">
+                PAN format is invalid
+            </div>            
+          </div>
+        </div>
+        <br>
+        <p>Enter PAN number to enable the Submit button.</p>
+        <button type="submit" [disabled]="panForm.invalid">Submit</button>&nbsp;
+        <button type="button" (click)="panForm.resetForm({})">Reset</button>        
+    </div>
+    <div *ngIf="panForm.submitted">
+        <p>You have validated format of your PAN ID: {{ panForm.value.pan }}!</p>
+        <button type="button" (click)="panForm.resetForm({})">
+            Retry PAN Number Format Validation...
+        </button>
+    </div>
+</form>
