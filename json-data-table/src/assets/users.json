@@ -1,0 +1,7 @@
+[
+	{"id":1,"name":"John",	"role":"Customer",	"age":"30", "city":"Delhi"},
+	{"id":2,"name":"Maria",	"role":"Customer",	"age":"35", "city":"Chennai"},
+	{"id":3,"name":"Admin",	"role":"Admin",		"age":"36", "city":"Kolkata"},
+	{"id":4,"name":"Elahi",	"role":"Customer",	"age":"31", "city":"Pune"},
+	{"id":5,"name":"Manjur","role":"Admin",		"age":"34", "city":"Mumbai"}
+]
