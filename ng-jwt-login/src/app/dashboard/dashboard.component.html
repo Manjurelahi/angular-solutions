@@ -1,0 +1,14 @@
+<div>
+  @if (this.authService.isLoggedInSignal()) {
+    @if (this.authService.isAdmin()) {
+      <app-admin></app-admin>
+    }
+    @else if (this.authService.isUser()) {
+      <app-user></app-user>
+    }
+  } @else {
+    Session Expired or Logged-out. <br><br>
+    <a routerLink="/login"> Please Log in. </a>
+  }
+</div>
+
