@@ -1,0 +1,7 @@
+<label for="search">Search Technical Skills: </label>
+<input list="suggestions" id="search" [formControl]="searchControl">
+<datalist id="suggestions">
+  @for (skill of techSkills; track $index) {
+    <option [value]="skill"></option>
+  }
+</datalist>
